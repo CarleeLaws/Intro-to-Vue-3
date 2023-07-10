@@ -15,13 +15,20 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <!-- you can just use : as short hanc for v-bind -->
+            <!-- you can just use : as short hand for v-bind -->
             <a :href="url">
             <img v-bind:src="image">
             </a>
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <p v-if="inStock = true">In Stock</p>
+            <!-- <p v-else-if="inventory <= 10 && inventory > 0">Almost out of Stock</p> -->
+            <p v-else>Out of Stock</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+            
           </div>
         </div>
       </div>
